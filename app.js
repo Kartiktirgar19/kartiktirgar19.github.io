@@ -14,10 +14,18 @@ function getRandomNumber(){
   }
 }
 
-function playGame( userChoice ){
+function playGame( userChoice ){M
   const computerChoiceIndex = getRandomNumber();
   let computerchoice = computerChoices[computerChoiceIndex];
   let resultmeg = resultMsgs[computerChoiceIndex];
   document.getElementById('result').innerHTML = 
 `you have chosen ${userChoice}. computer choice is ${computerchoice} ${resultmeg}`;
+}
+
+let currentPlayer = "X";
+
+function onClickCell( event, row, col ){
+    
+    event.innerHTML= currentPlayer;
+    currentPlayer =  currentPlayer === "X" ? "0": "X" ; 
 }
