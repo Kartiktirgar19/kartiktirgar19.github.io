@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      const computerChoices = ['bat', 'ball', 'stump'];
+      const resultMsgs = [ ` tie`, `user won .`, `computer won`];
+
+      function getRandomNumber(){
+        let rendomnumber = Math.random() * 3;
+        if( rendomnumber >0 && rendomnumber <= 1 ){
+          return 0;
+        } 
+        else if ( rendomnumber > 1 && rendomnumber <= 2 ){
+          return 1;
+        }
+        else{
+          return 2;
+        }
+      }
+
+      function playGame( userChoice ){
+        const computerChoiceIndex = getRandomNumber();
+        let computerchoice = computerChoices[computerChoiceIndex];
+        let resultmeg = resultMsgs[computerChoiceIndex];
+        document.getElementById('result').innerHTML = 
+     `you have chosen ${userChoice}. computer choice is ${computerchoice} ${resultmeg}`;
+      }
+
+    </script>
+
+</head>
+<body>
+    <h1>Bat Ball Stump Game </h1>
+    <button onclick="playGame('bat');" >Bat</button>  
+    <button onclick="playGame('ball');"> ball</button>
+    <button onclick="playGame('stump');">stump</button>
+    <div id="result"></div>
+</body>
+</html>
